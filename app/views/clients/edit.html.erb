@@ -1,9 +1,15 @@
-<h1>Edit page</h1>
-
-<%= simple_form_for @client, url: "/clients/#{@client.id}", method: 'patch' do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.button :submit %>
-<% end %>
-
-<p><%= link_to 'Go back', clients_path %></p>
+<div class="container">
+  <h4 class="ml-2"> Update your client below: </h4>
+  <div class="container">
+    <%= simple_form_for @client, url: "/clients/#{@client.id}", method: 'patch' do |f| %>
+      <div class="form-control form-control-sm">
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+      </div>
+      <div class="form-actions d-flex justify-content-between mt-2">
+        <%= f.button :submit, class: 'btn btn-primary btn-sm' %>
+        <%= link_to 'Go back', clients_path, class: "btn btn-outline-primary btn-sm" %>
+      </div>
+    <% end %>
+  </div>
+</div>
