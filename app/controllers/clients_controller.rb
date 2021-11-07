@@ -9,6 +9,12 @@ class ClientsController < ApplicationController
 
   def create
     @client = Client.new(client_params)
+    @client.user = current_user
+    if @client.save
+      redirect_to clients_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -16,15 +22,22 @@ class ClientsController < ApplicationController
   end
 
   def edit
-
+    @client = Client.find(params[:id])
   end
 
   def update
-
+    @client = Client.find(params[:id])
+    if @client.update(client_params)
+      redirect_to clients_path, notice: 'Client was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
-
+    @client = Client.find(params[:id])
+    @client.destroy
+    redirect_to clients_path
   end
 
   private

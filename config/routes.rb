@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/clients/new', to: 'clients#new'
   post '/clients', to: 'clients#create'
   get '/clients/:id', to: 'clients#show', as: :show_client_path
-  get '/clients/:id/edit', to: 'clients#edit', as: :edit_client_path
-  patch '/clients/:id', to: 'clients#update', as: :patch_client_path
+  get '/clients/:id/edit', to: 'clients#edit'
+  patch '/clients/:id', to: 'clients#update'
   delete '/clients/:id', to: 'clients#destroy', as: :delete_client_path
 end
