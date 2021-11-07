@@ -1,6 +1,12 @@
 <h1>Index page</h1>
+
 <ul>
   <% @clients.each do |client| %>
-    <li><%= link_to "#{client.first_name} #{client.last_name}", show_client_path_url(client) %></li>
+    <li>
+      <%= link_to "#{client.first_name} #{client.last_name}", show_client_path_url(client) %>
+      <%= link_to 'Delete', delete_client_path_url(client), method: :delete, data: { confirm: 'are you sure?' } %>
+    </li>
   <% end %>
 </ul>
+
+<%= link_to 'Add a new client', new_client_path_url, class: 'btn btn-flat' %>
