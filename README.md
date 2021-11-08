@@ -1,24 +1,17 @@
-# README
+ # ClientManager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+L'application permet d'utiliser les actions CRUD pour la gestion de clients
 
-Things you may want to cover:
+* Ruby 2.7.3
 
-* Ruby version
+* Rails 6.0.4.1
 
-* System dependencies
+* SQLite pour la bd
 
-* Configuration
+* J'ai ajouté les Gems Faker, Devise ET Simple-form ainsi que la librairie Bootstrap.
 
-* Database creation
+* Seed file
 
-* Database initialization
+* On peut utiliser email: a@a.a / password: 123456 pour utiliser l'app.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Merci!**
