@@ -5,9 +5,10 @@
       <div class="form-control form-control-sm">
         <%= f.input :first_name %>
         <%= f.input :last_name %>
+        <%= f.input :address %>
       </div>
       <div class="form-actions d-flex justify-content-between mt-2">
-        <%= f.button :submit, 'Add Client', class: 'btn btn-primary btn-sm' %>
+        <%= f.button :submit, 'Add Client', class: 'btn btn-primary btn-sm', id: 'add-client' %>
         <%= link_to 'Go back', clients_path, class: "btn btn-outline-primary btn-sm" %>
       </div>
     <% end %>

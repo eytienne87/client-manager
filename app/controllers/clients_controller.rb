@@ -11,7 +11,7 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     @client.user = current_user
     if @client.save
-      redirect_to clients_path
+      redirect_to clients_path, primary: 'Client successfully added'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class ClientsController < ApplicationController
   def update
     @client = Client.find(params[:id])
     if @client.update(client_params)
-      redirect_to clients_path, notice: 'Client was successfully updated.'
+      redirect_to clients_path, primary: 'Client successfully updated.'
     else
       render :edit
     end
@@ -37,12 +37,12 @@ class ClientsController < ApplicationController
   def destroy
     @client = Client.find(params[:id])
     @client.destroy
-    redirect_to clients_path
+    redirect_to clients_path, primary: 'Client successfully deleted.'
   end
 
   private
 
   def client_params
-    params.require(:client).permit(:first_name, :last_name)
+    params.require(:client).permit(:first_name, :last_name, :address)
   end
 end

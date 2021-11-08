@@ -4,7 +4,7 @@
   <% @clients.each do |client| %>
     <li>
       <%= link_to "#{client.first_name} #{client.last_name}", show_client_path_url(client) %>
-      <%= link_to 'Delete', delete_client_path_url(client), method: :delete, data: { confirm: 'are you sure?' } %>
+      <%= link_to 'Delete', delete_client_path_url(client), method: :delete, data: { confirm: 'Are you sure you want to delete this client?' } %>
     </li>
   <% end %>
 </ul>
