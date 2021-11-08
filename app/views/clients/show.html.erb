@@ -1,4 +1,16 @@
-<h3> <%= "#{@client.first_name} #{@client.last_name}" %></h3>
-
-<p><%= link_to 'Edit', edit_client_path_url %></p>
-<p><%= link_to 'Go back', clients_path %></p>
+<div class="container d-flex justify-content-center mt-2">
+  <div class="card" style="width: 32rem;">
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= "#{@client.first_name} #{@client.last_name}" %>
+      </h5>
+      <p class="card-text">
+        <%= @client.address %>
+      </p>
+      <div class="d-flex justify-content-between">
+        <p><%= link_to 'Edit', edit_client_path_url, class: 'btn btn-primary btn-sm' %></p>
+        <p><%= link_to 'Go back', clients_path, class: "btn btn-outline-primary btn-sm" %></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,14 @@
-<div class="container">
+<div class="container w-50">
   <h4 class="ml-2"> Enter information about your new client: </h4>
-  <div class="container">
-    <%= simple_form_for @client do |f| %>
-      <div class="form-control form-control-sm">
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :address %>
-      </div>
-      <div class="form-actions d-flex justify-content-between mt-2">
-        <%= f.button :submit, 'Add Client', class: 'btn btn-primary btn-sm', id: 'add-client' %>
-        <%= link_to 'Go back', clients_path, class: "btn btn-outline-primary btn-sm" %>
-      </div>
-    <% end %>
-  </div>
+  <%= simple_form_for @client do |f| %>
+    <div class="form-control form-control-sm">
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :address %>
+    </div>
+    <div class="form-actions d-flex justify-content-between mt-2">
+      <%= f.button :submit, 'Add Client', class: 'btn btn-primary btn-sm', id: 'add-client' %>
+      <%= link_to 'Go back', clients_path, class: "btn btn-outline-primary btn-sm" %>
+    </div>
+  <% end %>
 </div>
